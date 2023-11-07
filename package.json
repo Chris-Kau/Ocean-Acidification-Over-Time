@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "pandas": "^0.0.3",
     "plotly.js-dist": "^2.27.0"
   }
 }
