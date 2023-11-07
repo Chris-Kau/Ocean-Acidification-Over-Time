@@ -2,14 +2,15 @@ import pandas as pd
 def get_column(file, filename):
     df = pd.read_excel(file).to_dict()
     date = df['yyyymmdd']
+    hh = df['hh']
     pH_mean = df['FET_PHINT_mean']
     pCO2_levels = df['SAMI_CO2_mean']
     with open(filename, "w") as file:
         file.write('')
     with open(filename, "a") as file:
         for i in date.keys():
-            temp = (f"{date[i]}, {pH_mean[i]}, {pCO2_levels[i]}\n")
-            if str(-9999) not in temp:
+            temp = (f"{date[i]}{hh[i]}, {pH_mean[i]}, {pCO2_levels[i]}\n")
+            if str(-9999) not in temp and 'yyyymmdd' not in temp:
                 file.write(temp)
     
 def three_files(file, year):
@@ -30,5 +31,5 @@ def three_files(file, year):
 
 
 
-get_column('C:/Users/Chris/OneDrive - csulb/Ocean Acidification Data/CascoBay_NCEI_2020.xlsx', '2020.txt')
-three_files('2020.txt', '2020')
+get_column('C:/Users/Chris/OneDrive - csulb/Ocean Acidification Data/CascoBay_NCEI_2019.xlsx', '2019.txt')
+three_files('2019.txt', '2019')
