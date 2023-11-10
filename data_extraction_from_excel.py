@@ -28,7 +28,23 @@ def three_files(file, year):
                 for data in list:
                     file.write(f'{data[i]}\n')
 
+def append_files(files):
+    with open('combined_co2.txt', 'w') as combined:
+        combined.write('')
+    for file in files:
+        temp = open(file, 'r')
+        with open('combined_co2.txt', 'a') as combined:
+            combined.write(f'{temp.read()}\n')
 
+#get_column('C:/Users/Chris/OneDrive - csulb/Ocean Acidification Data/CascoBay_NCEI_2015.xlsx', '2015.txt')
+#three_files('2015.txt', '2015')
+files_to_combine = [
+    'Ocean Acidification Data/2015/2015_co2.txt',
+    'Ocean Acidification Data/2016/2016_-co2.txt',
+    'Ocean Acidification Data/2017/2017_co2.txt',
+    'Ocean Acidification Data/2018/2018_co2.txt',
+    'Ocean Acidification Data/2019/2019_co2.txt',
+    'Ocean Acidification Data/2020/2020_co2.txt'
+]
 
-get_column('C:/Users/Chris/OneDrive - csulb/Ocean Acidification Data/CascoBay_NCEI_2015.xlsx', '2015.txt')
-three_files('2015.txt', '2015')
+append_files(files_to_combine)

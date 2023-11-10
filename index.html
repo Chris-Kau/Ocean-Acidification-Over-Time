@@ -15,7 +15,20 @@
         <div id = 'graph'></div>
     </section>
 
+    <section>
+        <input type = 'checkbox' id = 'cars'>testing</input>
+        <input type = 'button' id = 'carsbtn'>submit</input>
+    </section>
+
     <script type = 'module' src = 'graph files/graph.js'></script>
-    <script type = 'module' src = 'graph files/test.js'></script>
+    <script type = 'module' src = 'graph files/read_data.js'></script>
+
+    <script>
+        const cb = document.querySelector('#cars');
+        const btn = document.querySelector('#carsbtn');
+        btn.onclick = () =>{
+            console.log(cb.checked);
+        }
+    </script>
 </body>
 </html>
