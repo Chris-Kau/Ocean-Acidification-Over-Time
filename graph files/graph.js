@@ -57,7 +57,7 @@ async function main(){
     };
     
     var layout = {
-        title: 'hey',
+        title: 'Ocean pH Levels and cO2 Levels in The Atmosphere',
         xaxis: {
             type: 'category',
             tickmode: 'array',
