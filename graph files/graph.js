@@ -1,4 +1,4 @@
-import { read_data, xdateval, ypHval, ycO2val} from './read_data.js';
+import {update_data, xdateval, ypHval, ycO2val} from './buttons.js';
 
 function convert_date(yyyymmddhh) {
     yyyymmddhh = yyyymmddhh.toString();
@@ -24,7 +24,7 @@ function get_year_points(data) {
 }
 
 async function main(){
-    await read_data();
+    await update_data();
     const dateList = [];
     for (let date in xdateval){
         dateList.push(convert_date(xdateval[date]));
@@ -73,6 +73,8 @@ async function main(){
     };
     var data = [pHLevels, cO2Levels];
     Plotly.newPlot('graph', data, layout);
+    
 }
 
 main();
+export {main};
