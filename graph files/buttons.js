@@ -1,5 +1,5 @@
 import { read_data, xdateval1, ypHval1, ycO2val1} from './read_data.js';
-import { main } from './graph.js';
+import { main, graph_update } from './graph.js';
 var xdateval = [];
 var ypHval = [];
 var ycO2val = []; 
@@ -30,9 +30,9 @@ async function update_data(){
         //Oil: 45%, Coal: 19%, Nautral Gas 36%
         var eleven_percent = ycO2val1[idx] * 0.11;
         var remaining = ycO2val1[idx] * 0.89;
-        oil_vals.push((remaining * .45) + eleven_percent);
-        coal_vals.push((remaining * .19) + eleven_percent);
-        natural_gas_vals.push((remaining * .36) + eleven_percent);
+        oil_vals.push((remaining * .45));
+        coal_vals.push((remaining * .19));
+        natural_gas_vals.push((remaining * .36));
     };
 }
 
@@ -40,33 +40,42 @@ oil.addEventListener('change', function(){
         if (oil.checked){
             for (let idx in ycO2val){
                 ycO2val[idx] = ycO2val[idx] - oil_vals[idx];
-                
             }
-            main();
-            console.log(ycO2val[0]);
+            graph_update();
         }else{
             for (let idx in ycO2val){
                 ycO2val[idx] = ycO2val[idx] + oil_vals[idx];
             }
-            main();
-            console.log(ycO2val[0]);
+            graph_update();
         }
     });
 
-    coal.addEventListener('change', function(){
-        if (coal.checked){
-
-        }else{
-
+coal.addEventListener('change', function(){
+    if (coal.checked){
+        for (let idx in ycO2val){
+            ycO2val[idx] = ycO2val[idx] - coal_vals[idx];
         }
-    });
-
-    natural_gas.addEventListener('change', function(){
-        if (natural_gas.checked){
-
-        }else{
-
+        graph_update();
+    }else{
+        for (let idx in ycO2val){
+            ycO2val[idx] = ycO2val[idx] + coal_vals[idx];
         }
-    });
+        graph_update();
+    }
+});
+
+natural_gas.addEventListener('change', function(){
+    if (natural_gas.checked){
+        for (let idx in ycO2val){
+            ycO2val[idx] = ycO2val[idx] - natural_gas_vals[idx];
+        }
+        graph_update();
+    }else{
+        for (let idx in ycO2val){
+            ycO2val[idx] = ycO2val[idx] + natural_gas_vals[idx];
+        }
+        graph_update();
+    }
+});
 
 export {update_data, xdateval, ypHval, ycO2val};

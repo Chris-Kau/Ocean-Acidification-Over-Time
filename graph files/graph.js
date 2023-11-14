@@ -23,9 +23,23 @@ function get_year_points(data) {
     return points;
 }
 
+function get_cO2_points(data){
+    var points = [];
+    var max = Math.max(...data);
+    for (let i = 1; i <= Math.ceil(max/300); i++){
+        points.push(i * 300);
+    }
+    console.log(points);
+    return points;
+}
+
+
 async function main(){
     await update_data();
     const dateList = [];
+    get_cO2_points(ycO2val);
+    // console.log(get_cO2_points(ycO2val[0]));
+    // console.log(get_cO2_points(ycO2val[1]));
     for (let date in xdateval){
         dateList.push(convert_date(xdateval[date]));
     };
@@ -41,6 +55,7 @@ async function main(){
             missing_dates.push(current.toString());
         }
     };
+
     var pHLevels = {
         x: dateList,
         y: ypHval,
@@ -64,8 +79,14 @@ async function main(){
             tickvals: get_year_points(dateList),
             ticktext: ['2016', '2017', '2018', '2019', '2020']
         },
-        yaxis: {title: 'pH Level'},
+        yaxis: {
+            title: 'pH Level',
+        },
         yaxis2:{
+            tickmode: 'array',
+            tickvals: [300,600,900,1200,1500,1800],
+            ticktext: [300,600,900,1200,1500,1800],
+            range: [0,1800],
             title: 'cO2 Level',
             overlaying: 'y',
             side: 'right'
@@ -73,8 +94,11 @@ async function main(){
     };
     var data = [pHLevels, cO2Levels];
     Plotly.newPlot('graph', data, layout);
-    
+
 }
 
+function graph_update(){
+    Plotly.update('graph',{'y2' : ycO2val}, {'y' : ypHval});
+}
 main();
-export {main};
+export {main, graph_update};
