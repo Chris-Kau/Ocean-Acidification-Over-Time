@@ -1,5 +1,5 @@
 body{
-    background: radial-gradient(black, #181818);
+    background: radial-gradient(black, #292929);
     color: white;
 }
 
@@ -15,11 +15,17 @@ body{
 
 .intro-div img{
     float: right;
-    padding-right: 50px;
+    margin-right: 50px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .intro-div span{
     width: 50%;
     float: left;
     font-size: 25px;
+}
+
+.graph-div{
+    width: 90%;
+    align-self: center;
 }

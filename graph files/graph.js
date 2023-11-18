@@ -75,9 +75,9 @@ async function main(){
         },
         yaxis2:{
             tickmode: 'array',
-            tickvals: [300,600,900,1200,1500,1800],
-            ticktext: [300,600,900,1200,1500,1800],
-            range: [0,1800],
+            tickvals: [350,700,1050,1400,1750],
+            ticktext: [350,700,1050,1400,1750],
+            range: [0,1750],
             title: 'cO2 Level',
             overlaying: 'y',
             side: 'right'
