@@ -23,23 +23,10 @@ function get_year_points(data) {
     return points;
 }
 
-function get_cO2_points(data){
-    var points = [];
-    var max = Math.max(...data);
-    for (let i = 1; i <= Math.ceil(max/300); i++){
-        points.push(i * 300);
-    }
-    console.log(points);
-    return points;
-}
-
 
 async function main(){
     await update_data();
     const dateList = [];
-    get_cO2_points(ycO2val);
-    // console.log(get_cO2_points(ycO2val[0]));
-    // console.log(get_cO2_points(ycO2val[1]));
     for (let date in xdateval){
         dateList.push(convert_date(xdateval[date]));
     };
@@ -80,6 +67,10 @@ async function main(){
             ticktext: ['2016', '2017', '2018', '2019', '2020']
         },
         yaxis: {
+            tickmode: 'array',
+            tickvals: [7,9],
+            ticktext: [7,9],
+            range: [7,9],
             title: 'pH Level',
         },
         yaxis2:{

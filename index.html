@@ -4,11 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ocean Acidification</title>
+    <link rel = 'stylesheet' href="css files/index.css">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script>var exports = {};</script>
+    <script src="https://unpkg.com/simple-statistics@7.8.3/dist/simple-statistics.js"></script>
 </head>
 <body>
-    <section>
-        <h1>Ocean Acidification Graph</h1>
+    <h1 style = "text-align: center">Ocean Acidification</h1>
+    <section class = 'introduction'>
+        <div class = 'intro-div'>
+            <span>
+                <h1>What is ocean acidification?</h1>
+                <ul>
+                    <li><p>Ocean acidification is the lowering of pH levels.</p></li>
+                </ul>
+
+            </span>
+            <img src="images/intro img.png">
+        </div>
     </section>
     
     <section>
@@ -16,9 +29,9 @@
     </section>
 
     <section>
-        <input type = 'checkbox' id = 'oil'>oil</input>
-        <input type = 'checkbox' id = 'coal'>coal</input>
-        <input type = 'checkbox' id = 'natural-gas'>natural gas</input>
+        <input type = 'checkbox' id = 'oil' checked>oil</input>
+        <input type = 'checkbox' id = 'coal' checked>coal</input>
+        <input type = 'checkbox' id = 'natural-gas' checked>natural gas</input>
     </section>
 
     <script type = 'module' src = 'graph files/graph.js'></script>

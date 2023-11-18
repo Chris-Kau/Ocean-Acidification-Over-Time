@@ -1,0 +1,25 @@
+body{
+    background: radial-gradient(black, #181818);
+    color: white;
+}
+
+.introduction h1{
+    text-align: center;
+    font-size: 30px;
+}
+
+.intro-div{
+    height: 500px;
+    padding-bottom: 50px;
+}
+
+.intro-div img{
+    float: right;
+    padding-right: 50px;
+}
+
+.intro-div span{
+    width: 50%;
+    float: left;
+    font-size: 25px;
+}
