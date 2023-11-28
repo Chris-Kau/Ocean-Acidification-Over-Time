@@ -14,26 +14,40 @@
     <section class = 'introduction'>
         <div class = 'intro-div'>
             <span>
-                <h1>What is ocean acidification?</h1>
-                <ul>
-                    <li>Ocean acidification is the lowering of pH levels over an extended period of time.</li>
-                    <li>Harms marine organisms, particularly those with calcium carbonate shells or skeletons. Ex: corals, mullusks, some planktons</li>
-                    <li></li>
-                </ul>
-
+                <h1>Ocean Acidification Explanation</h1>
+                <p>First cO2 from the atmosphere is absorbed by the sruface water of the ocean. 
+                    That cO2 then reacts with the H2O and forms carbonic acid H2CO3 that breaks into hydrogen ions H+ and bicarbonate ions HCO3. 
+                The extra hydrogen ions is what causes the lowering of pH levels in the ocean from its initial average value, 8.1, making it more acidic.
+                </p>
             </span>
-            <img src="images/intro img.png">
+            <img src="images/part1.jpg" class = 'part1'>
         </div>
     </section>
-    
-    <section >
+
+    <section class = 'effect'>
+        <div class = 'effect-div'>
+            <span>
+                <h1>Effect on Marine Ecosystem</h1>
+                <p>Organisms that create shells are most impacted by ocean acidification such as oysters, shellfish, and corals. Coral skeletons are made up of calcium carbonate CaCO3. Coral polyps create the skeleton by combining calcium ions Ca+2 with carbonate ions Co3-2 in seawater to create the calcium carbonate. However, with a more acidic ocean comes with an abundance of extra H+ ions floating in the water, which also means there are more carbonate ions that bond with hydrodren. This leaves less ions that can be used to make coral skeletons. Coral reefs are huge marine ecosystems with 25% of the oceans fish alone relying on them for things like food and shelter. Other animals like shellfish and oyster also lose their protection. Some fish and other animals like clounfish behavior also change with varying pH affecting their ability to do things like locate predatores and habitat.</p>
+
+            </span>
+            <img src="images/part2.png" class = 'part2'>
+        </div>
+    </section>
+    <section>
         <div id = 'graph' class = 'graph-div'></div>
+        <p>Note: the modified values in this graph are not accurate, it is an estimate of what the values are to look like. Despite the modified values being innacurate, it is still important to understand the relationship between pH levels and cO2 levels.</p>
+        <p style = "font-size: 25px; text-align: center; margin: auto; width: 60%;"> About 33% of cO2 in the atmosphere stems from human activities
+            Fossil Fuels & Industry make up  about 89% of carbon emissions Fossil fuels contains oil, coal, and natural gases. Oil makes up 45% of fossil fules, coal make sup 19%, and natural gasses make up 36%. By unchecking the values, we can see the pH levels rise since the cO2 values drop by said percentage.</p>
+            <p></p>
     </section>
 
-    <section>
-        <input type = 'checkbox' id = 'oil' checked>oil</input>
-        <input type = 'checkbox' id = 'coal' checked>coal</input>
-        <input type = 'checkbox' id = 'natural-gas' checked>natural gas</input>
+    <section class = 'checkboxes'>
+        <div>
+        <input type = 'checkbox' id = 'oil' checked>oil: 45%</input>
+        <input type = 'checkbox' id = 'coal' checked>coal: 19%</input>
+        <input type = 'checkbox' id = 'natural-gas' checked>natural gas: 36%</input>
+        </div>
     </section>
 
     <script type = 'module' src = 'graph files/graph.js'></script>
